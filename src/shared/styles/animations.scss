@@ -1,3 +1,4 @@
+
 $transition-timeout: 1000ms;
 
 .content-left-enter {
@@ -15,10 +16,16 @@ $transition-timeout: 1000ms;
     transform:translateY(10vh)
 }
 
+.content-grow-enter {
+    opacity: 0;
+    transform: scale(.8);
+}
+
 .content-left-enter-active,
 .content-right-enter-active,
-.content-bottom-enter-active {
+.content-bottom-enter-active,
+.content-grow-enter-active {
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity 1000ms, transform $transition-timeout;
+    transform: translateX(0) scale(1);
+    transition: opacity $transition-timeout, transform $transition-timeout;
 }

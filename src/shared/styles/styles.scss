@@ -22,8 +22,9 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 105vh;
-    width: 100vw;
+    min-height: 105vh;
+    max-width: 100vw;
+    padding: 5rem;
 }
 
 .header {
@@ -31,18 +32,24 @@ html {
 }
 
 .header .background {
-    background: linear-gradient(335deg, #abd699 0%, #75c9b7 100%);
+    background: linear-gradient(45deg, $primary-color 0%, $tertiary-color 100%);
     background-repeat: no-repeat;
     background-position: center;
-    height: 105vh;
+    min-height: 105vh;
     width: 100vw;
     position: fixed;
 }
 
 .header .content {
     min-height: 105vh;
-    width: 100vw;
-    position: absolute;
+    max-width: 80vw;
+}
+
+.header img {
+    width: 40%;
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
 }
 
 .header h1,
@@ -63,6 +70,7 @@ p {
 .header h5 {
     font-size: 2rem;
     font-weight: 400;
+    margin-left: 1rem;
     margin-bottom: 1.5rem;
 }
 
