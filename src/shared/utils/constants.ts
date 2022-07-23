@@ -1,0 +1,1 @@
+export const transitionTimeout = 1000

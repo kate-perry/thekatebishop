@@ -1,3 +1,4 @@
+@use './animations.scss';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
 
 $primary-color: #abd699; // lime
@@ -23,34 +24,54 @@ html {
     align-items: center;
     height: 105vh;
     width: 100vw;
-    background: linear-gradient(335deg, #abd699 0%, #75c9b7 100%);
 }
 
 .header {
-    min-height: 100vh;
+    min-height: 105vh;
 }
 
 .header .background {
     background: linear-gradient(335deg, #abd699 0%, #75c9b7 100%);
     background-repeat: no-repeat;
     background-position: center;
-    height: 100vh;
+    height: 105vh;
     width: 100vw;
     position: fixed;
 }
 
-.header h1, h5, h6 {
+.header .content {
+    min-height: 105vh;
+    width: 100vw;
+    position: absolute;
+}
+
+.header h1,
+h5,
+h6,
+p {
     font-family: $font-stack;
-    color: white;
+    color: $quinary-color;
     margin: 0;
 }
 
 .header h1 {
-    font-size: 6rem;
+    font-size: 10rem;
     font-weight: 800;
+    color: white
 }
 
 .header h5 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.header h5 span {
+    background-color: $secondary-color;
+    box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
+}
+
+.header h6 {
     font-size: 2rem;
     font-weight: 300;
 }
@@ -59,17 +80,16 @@ html {
     min-height: 100vh;
 }
 
-.aboutMe .background {
-    background-color: $quinary-color;
-    height: 100vh;
+.aboutMe .content {
+    background: $senary-color;
+    min-height: 105vh;
     width: 100vw;
-    position: fixed;
 }
 
-.aboutMe .content {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.aboutMe p {
+    font-family: $font-stack;
+    color: $quinary-color;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
 }

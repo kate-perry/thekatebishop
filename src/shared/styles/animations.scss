@@ -1,0 +1,24 @@
+$transition-timeout: 1000ms;
+
+.content-left-enter {
+    opacity: 0;
+    transform: translateX(-10vw)
+}
+
+.content-right-enter {
+    opacity: 0;
+    transform: translateX(10vw)
+}
+
+.content-bottom-enter {
+    opacity: 0;
+    transform:translateY(10vh)
+}
+
+.content-left-enter-active,
+.content-right-enter-active,
+.content-bottom-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 1000ms, transform $transition-timeout;
+}
