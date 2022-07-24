@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import Grid from '@mui/material/Grid';
 import '../shared/styles/styles.scss';
-import { transitionTimeout } from '../shared/utils/constants';
+import { headerTheme } from '../shared/styles/MuiThemes'
+import { transitionTimeout, WindowSize } from '../shared/utils/constants';
 import {
     title,
     tagline1,
@@ -10,64 +11,74 @@ import {
     aboutMe
 } from '../shared/utils/strings';
 import katebishop from '../shared/static/katebishop.png';
+import { ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
+import { WindowSizeContext } from '../App';
 
 export default function Header() {
     const [showContent, setShowContent] = useState(false);
+    const windowSize = useContext(WindowSizeContext);
+
     useEffect(() => {
         setShowContent(true)
+        console.log(windowSize)
     }, [])
 
     return (
         <div className="header">
-            <div className="background" />
-            <div className="content">
-                <Grid container direction="row">
-                    <Grid item xs={6}>
-                        <CSSTransition
-                            in={showContent}
-                            timeout={transitionTimeout}
-                            classNames="content-left"
-                            unmountOnExit
-                            onEnter={() => setShowContent(true)}>
-                            <Grid container direction="column">
-                                <Grid item>
-                                    <h6>{tagline1}</h6>
+            <ThemeProvider theme={headerTheme}>
+                <div className="background" />
+                <div className="content">
+                    <Grid container direction="row">
+                        <Grid item xs={windowSize >= WindowSize.MEDIUM ? 8 : 11}>
+                            <CSSTransition
+                                in={showContent}
+                                timeout={transitionTimeout}
+                                classNames="content-left"
+                                unmountOnExit
+                                onEnter={() => setShowContent(true)}>
+                                <Grid container direction="column">
+                                    <Grid item>
+                                        <Typography variant="h6">{tagline1}</Typography>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant="h1">{title.toUpperCase()}</Typography>
+                                    </Grid>
                                 </Grid>
-                                <Grid item>
-                                    <h1>{title.toUpperCase()}</h1>
+                            </CSSTransition>
+                            <CSSTransition
+                                in={showContent}
+                                timeout={transitionTimeout}
+                                classNames="content-bottom"
+                                unmountOnExit
+                                onEnter={() => setShowContent(true)}>
+                                <Grid container direction="column">
+                                    <Grid item style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+                                        <Typography variant="h5">
+                                            <span>{tagline2}</span>
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant="body1">{aboutMe}</Typography>
+                                    </Grid>
                                 </Grid>
+                            </CSSTransition>
+                        </Grid>
+                        {windowSize >= WindowSize.MEDIUM &&
+                            <Grid item xs={4} alignContent="flex-end">
+                                <CSSTransition
+                                    in={showContent}
+                                    timeout={transitionTimeout}
+                                    classNames="content-grow"
+                                    unmountOnExit
+                                    onEnter={() => setShowContent(true)}>
+                                    <img src={katebishop} alt="Kate Bishop" />
+                                </CSSTransition>
                             </Grid>
-                        </CSSTransition>
-                        <CSSTransition
-                            in={showContent}
-                            timeout={transitionTimeout}
-                            classNames="content-bottom"
-                            unmountOnExit
-                            onEnter={() => setShowContent(true)}>
-                            <Grid container direction="column">
-                                <Grid item>
-                                    <h5>
-                                        <span>{tagline2}</span>
-                                    </h5>
-                                </Grid>
-                                <Grid item>
-                                    <p>{aboutMe}</p>
-                                </Grid>
-                            </Grid>
-                        </CSSTransition>
+                        }
                     </Grid>
-                    {/* <Grid item xs={6} alignContent="flex-end">
-                        <CSSTransition
-                            in={showContent}
-                            timeout={transitionTimeout}
-                            classNames="content-grow"
-                            unmountOnExit
-                            onEnter={() => setShowContent(true)}>
-                            <img src={katebishop} alt="Photo of Kate Bishop" />
-                        </CSSTransition>
-                    </Grid> */}
-                </Grid>
-            </div>
+                </div>
+            </ThemeProvider>
         </div>
     );
 }

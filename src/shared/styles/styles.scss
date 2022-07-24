@@ -8,6 +8,8 @@ $quaternary-color: #c7ddcc; // mint
 $quinary-color: #16123f; // navy
 $senary-color: #fdf9db; // light lemon
 $font-stack: 'Open Sans', sans-serif;
+$min-height: 100vh;
+$min-width: 100vw;
 
 html {
     background-color: $quinary-color;
@@ -22,32 +24,51 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 105vh;
-    max-width: 100vw;
-    padding: 5rem;
+    min-height: $min-height;
+    max-width: $min-width;
+    padding-left: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding-left: 1rem;
+    }
 }
 
 .header {
-    min-height: 105vh;
+    min-height: $min-height;
 }
 
 .header .background {
-    background: linear-gradient(45deg, $primary-color 0%, $tertiary-color 100%);
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 105vh;
-    width: 100vw;
+    background: linear-gradient(-45deg, $primary-color, $tertiary-color, $primary-color, $tertiary-color);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite;
+    min-height: $min-height;
+    width: $min-width;
     position: fixed;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .header .content {
-    min-height: 105vh;
-    max-width: 80vw;
+    min-height: $min-height;
 }
 
 .header img {
-    width: 40%;
-    -webkit-filter: grayscale(100%);
+    width: 100%;
+    -webkit-filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
 }
@@ -56,32 +77,13 @@ html {
 h5,
 h6,
 p {
-    font-family: $font-stack;
-    color: $quinary-color;
     margin: 0;
 }
 
-.header h1 {
-    font-size: 10rem;
-    font-weight: 800;
-    color: white
-}
-
-.header h5 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-left: 1rem;
-    margin-bottom: 1.5rem;
-}
-
 .header h5 span {
+    margin: 1rem;
     background-color: $secondary-color;
     box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
-}
-
-.header h6 {
-    font-size: 2rem;
-    font-weight: 300;
 }
 
 .aboutMe {
@@ -90,8 +92,8 @@ p {
 
 .aboutMe .content {
     background: $senary-color;
-    min-height: 105vh;
-    width: 100vw;
+    min-height: $min-height;
+    width: $min-width;
 }
 
 .aboutMe p {
