@@ -41,6 +41,7 @@ export const portfolioTheme = responsiveFontSizes(createTheme({
     h1: {
       fontSize: '5rem',
       fontWeight: 300,
+      color: palette.quinary,
     },
     h5: {
       fontSize: '1.5rem',
@@ -53,7 +54,7 @@ export const portfolioTheme = responsiveFontSizes(createTheme({
     },
     subtitle1: {
       fontSize: '1.25rem',
-      fontWeight: 400,
+      fontWeight: 600,
       margin: 0,
     },
     body1: {
