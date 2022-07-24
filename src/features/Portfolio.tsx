@@ -16,10 +16,10 @@ export default function Portfolio() {
             <ThemeProvider theme={portfolioTheme}>
                 <div className="content">
                     <Grid container direction="column">
-                        <Typography variant="h1">Portfolio</Typography>
+                        <div className="title"><Typography variant="h1">Portfolio</Typography></div>
                         {portfolio.map((project, i) =>
                             <Grid container direction="row" className='project'>
-                                <Grid item xs={8}>
+                                <Grid item xs={5}>
                                     <Grid container direction="column" className='description'>
                                         <span className={usableColors[i + 1]}>
                                             <Typography variant="h5">{project.projectRole}</Typography>
@@ -33,10 +33,13 @@ export default function Portfolio() {
                                         </span>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={7}>
                                     {project.artifacts ? [...project.artifacts].map((art, i) => {
                                         return (
-                                            <img alt={art.title} />
+                                            <div className="artifact">
+                                                <img src={require('../shared/static/' + art.src)} alt={art.title} className="artifact" />
+                                                <Typography variant="body1">{art.description}</Typography>
+                                            </div>
                                         )
                                     }) : null}
                                 </Grid>

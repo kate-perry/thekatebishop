@@ -91,6 +91,9 @@ html {
 
 .portfolio {
     min-height: $min-height;
+    & .title {
+        margin-bottom: 2rem;
+    }
     & .content {
         background: $senary-color;
         min-height: $min-height;
@@ -105,7 +108,9 @@ html {
             }
 
             & .artifact {
-                padding: 0rem;
+                & img {
+                    height: 5rem;
+                }
             }
         }
     }
