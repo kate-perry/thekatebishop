@@ -17,7 +17,7 @@ html {
 
 .app {
     text-align: start;
-  scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
 }
 
 .content {
@@ -27,12 +27,10 @@ html {
     align-items: center;
     min-height: $min-height;
     max-width: $min-width;
-    padding-left: 5rem;
-    padding-right: 3rem;
 }
 
 @media only screen and (max-width: 768px) {
-    .content {
+    .header .content {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -41,15 +39,43 @@ html {
 .header {
     min-height: $min-height;
     scroll-snap-align: start;
-}
 
-.header .background {
-    background: linear-gradient(-45deg, $primary-color, $tertiary-color, $primary-color, $tertiary-color);
-    background-size: 400% 400%;
-    animation: gradient 7s ease infinite;
-    min-height: $min-height;
-    width: $min-width;
-    position: fixed;
+    & .background {
+        background: linear-gradient(-45deg, $primary-color, $tertiary-color, $primary-color, $tertiary-color);
+        background-size: 400% 400%;
+        animation: gradient 7s ease infinite;
+        min-height: $min-height;
+        width: $min-width;
+        position: fixed;
+    }
+
+    & .content {
+        min-height: $min-height;
+        padding-left: 5rem;
+        padding-right: 3rem;
+    }
+
+    & h1,
+    h5,
+    h6,
+    p {
+        margin: 0
+    }
+
+    & h5 span {
+        margin: 1rem;
+        background-color: $secondary-color;
+        box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
+    }
+
+    & img {
+        width: 90%;
+        margin-left: 2rem;
+        box-shadow: inset -.5rem -.5rem 0 .75rem white;
+        -webkit-filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
+    }
 }
 
 @keyframes gradient {
@@ -66,76 +92,54 @@ html {
     }
 }
 
-.header .content {
-    min-height: $min-height;
-}
-
-.header img {
-    width: 90%;
-    margin-left: 2rem;
-    box-shadow: inset -.5rem -.5rem 0 .75rem white;
-    -webkit-filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
-    /* Safari 6.0 - 9.0 */
-    filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
-}
-
-.header h1,
-h5,
-h6,
-p {
-    margin: 0;
-}
-
-.header h5 span {
-    margin: 1rem;
-    background-color: $secondary-color;
-    box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
-}
-
 .portfolio {
     min-height: $min-height;
     scroll-snap-align: start;
+
+    & .content {
+        background: $senary-color;
+        min-height: $min-height;
+        width: $min-width;
+        padding: 5rem;
+
+        & .project {
+            min-height: $min-height;
+            padding: 5rem;
+
+            & .description span {
+                padding: 5rem;
+            }
+
+            & .artifact {
+                padding: 0rem;
+            }
+        }
+    }
+
 }
 
-.portfolio .content {
-    background: $senary-color;
-    min-height: $min-height;
-    width: $min-width;
-    padding: 5rem;
-}
-
-.portfolio .content .project {
-    min-height: $min-height;
-    padding: 5rem;
-}
-
-.description span {
-    padding: 5rem
-}
-
-.primary{
+.primary {
     background: $primary-color;
 }
 
-.secondary{
+.secondary {
     background: $secondary-color;
 }
 
-.tertiary{
+.tertiary {
     background: $tertiary-color;
     color: white;
 }
 
-.quaternary{
+.quaternary {
     background: $quaternary-color;
 }
 
-.quinary{
+.quinary {
     background: $quinary-color;
     color: white;
 }
 
-.senary{
+.senary {
     background: $senary-color;
 }
-
