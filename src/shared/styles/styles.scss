@@ -42,10 +42,12 @@ body {
     align-items: center;
     min-height: $min-height;
     max-width: $min-width;
+    padding-left: 5rem;
+    padding-right: 3rem;
 }
 
 @media only screen and (max-width: 768px) {
-    .header .content {
+    .content {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -65,8 +67,6 @@ body {
 
     & .content {
         min-height: $min-height;
-        padding-left: 5rem;
-        padding-right: 3rem;
     }
 
     & h1,
@@ -124,7 +124,7 @@ body {
         background: $senary-color;
         min-height: $min-height;
         width: $min-width;
-        padding: 5rem;
+        padding-top: 2.5rem;
 
         & .projects {
             overflow: scroll;

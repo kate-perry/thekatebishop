@@ -21,64 +21,100 @@ export default function Header() {
 
     useEffect(() => {
         setShowContent(true)
-        console.log(windowSize)
-    }, [windowSize])
+    }, [])
 
     return (
         <div className="header">
             <ThemeProvider theme={headerTheme}>
                 <div className="background" />
                 <div className="content">
-                    <Grid container direction="row">
-                        <Grid item xs={windowSize >= WindowSize.MEDIUM ? 8 : 12}>
-                            <CSSTransition
-                                in={showContent}
-                                timeout={transitionTimeout}
-                                classNames="content-left"
-                                unmountOnExit
-                                onEnter={() => setShowContent(true)}>
-                                <Grid container direction="column">
-                                    <Grid item>
-                                        <Typography variant="h6">{tagline1}</Typography>
+                    {windowSize > WindowSize.MEDIUM ?
+                        <Grid container direction='row'>
+                            <Grid item xs={8}>
+                                <CSSTransition
+                                    in={showContent}
+                                    timeout={transitionTimeout}
+                                    classNames="content-left"
+                                    unmountOnExit
+                                    onEnter={() => setShowContent(true)}>
+                                    <Grid container direction="column">
+                                        <Grid item>
+                                            <Typography variant="h6">{tagline1}</Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant="h1">{title.toUpperCase()}</Typography>
+                                        </Grid>
                                     </Grid>
-                                    <Grid item>
-                                        <Typography variant="h1">{title.toUpperCase()}</Typography>
+                                </CSSTransition>
+                                <CSSTransition
+                                    in={showContent}
+                                    timeout={transitionTimeout}
+                                    classNames="content-bottom"
+                                    unmountOnExit
+                                    onEnter={() => setShowContent(true)}>
+                                    <Grid container direction="column">
+                                        <Grid item style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+                                            <Typography variant="h5">
+                                                <span>{tagline2}</span>
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant="body1">{aboutMe}</Typography>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </CSSTransition>
-                            <CSSTransition
-                                in={showContent}
-                                timeout={transitionTimeout}
-                                classNames="content-bottom"
-                                unmountOnExit
-                                onEnter={() => setShowContent(true)}>
-                                <Grid container direction="column">
-                                    <Grid item style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
-                                        <Typography variant="h5">
-                                            <span>{tagline2}</span>
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography variant="body1">{aboutMe}</Typography>
-                                    </Grid>
-                                </Grid>
-                            </CSSTransition>
-                        </Grid>
-                        {windowSize >= WindowSize.MEDIUM &&
+                                </CSSTransition>
+                            </Grid>
                             <Grid item xs={4}>
-                                {/* <CSSTransition
+                                <CSSTransition
                                     in={showContent}
                                     timeout={transitionTimeout}
                                     classNames="content-grow"
                                     unmountOnExit
-                                    onEnter={() => setShowContent(true)}> */}
-                                    <img src={katebishop} alt="Kate Bishop" />
-                                {/* </CSSTransition> */}
+                                    onEnter={() => setShowContent(true)}>
+                                    <img src={katebishop} alt="Kate Bishop" className="photo" />
+                                </CSSTransition>
                             </Grid>
-                        }
-                    </Grid>
+                        </Grid>
+                        :
+                        <Grid container direction='column'>
+                            <Grid item xs={12}>
+                                <CSSTransition
+                                    in={showContent}
+                                    timeout={transitionTimeout}
+                                    classNames="content-left"
+                                    unmountOnExit
+                                    onEnter={() => setShowContent(true)}>
+                                    <Grid container direction="column">
+                                        <Grid item>
+                                            <Typography variant="h6">{tagline1}</Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant="h1">{title.toUpperCase()}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </CSSTransition>
+                                <CSSTransition
+                                    in={showContent}
+                                    timeout={transitionTimeout}
+                                    classNames="content-bottom"
+                                    unmountOnExit
+                                    onEnter={() => setShowContent(true)}>
+                                    <Grid container direction="column">
+                                        <Grid item style={{ marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+                                            <Typography variant="h5">
+                                                <span>{tagline2}</span>
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant="body1">{aboutMe}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </CSSTransition>
+                            </Grid>
+                        </Grid>
+                    }
                 </div>
-            </ThemeProvider>
-        </div>
+            </ThemeProvider >
+        </div >
     );
 }

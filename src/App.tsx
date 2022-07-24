@@ -3,12 +3,11 @@ import Header from './features/Header';
 import Portfolio from './features/Portfolio';
 import './shared/styles/styles.scss';
 import { getWindowSize } from './shared/utils/functions';
-import { WindowSize } from './shared/utils/constants';
 
-export const WindowSizeContext = createContext(WindowSize.MEDIUM);
+export const WindowSizeContext = createContext(getWindowSize());
 
 function App() {
-  const [windowSize, setWindowSize] = useState(WindowSize.MEDIUM);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
 
   useEffect(() => {
     function handleWindowResize() {
