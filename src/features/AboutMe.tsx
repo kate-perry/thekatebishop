@@ -31,7 +31,6 @@ export default function Header() {
     return (
         <div className="aboutMe">
             <div className="content">
-
                 <Grid container direction="column">
                     <Grid item ref={contentRef} >
                         <CSSTransition

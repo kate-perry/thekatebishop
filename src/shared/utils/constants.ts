@@ -1,6 +1,7 @@
 import { SliderMarkLabel } from "@mui/material"
 
 export const transitionTimeout = 1000
+export const paletteArray = ['primary', 'secondary', 'tertiary', 'quaternary', 'quinary', 'senary']
 export const palette = {
     primary: '#abd699',
     secondary: '#ffe26a',

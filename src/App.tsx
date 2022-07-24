@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import Header from './features/Header';
-import AboutMe from './features/AboutMe';
+import Portfolio from './features/Portfolio';
 import './shared/styles/styles.scss';
 import { getWindowSize } from './shared/utils/functions';
 import { WindowSize } from './shared/utils/constants';
@@ -24,7 +24,7 @@ function App() {
     <div className="app">
       <WindowSizeContext.Provider value={windowSize} >
         <Header />
-        <AboutMe />
+        <Portfolio />
       </WindowSizeContext.Provider>
     </div>
   );

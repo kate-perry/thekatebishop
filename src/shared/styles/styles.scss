@@ -17,6 +17,7 @@ html {
 
 .app {
     text-align: start;
+  scroll-snap-type: y mandatory;
 }
 
 .content {
@@ -39,6 +40,7 @@ html {
 
 .header {
     min-height: $min-height;
+    scroll-snap-align: start;
 }
 
 .header .background {
@@ -90,20 +92,50 @@ p {
     box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
 }
 
-.aboutMe {
-    min-height: 100vh;
+.portfolio {
+    min-height: $min-height;
+    scroll-snap-align: start;
 }
 
-.aboutMe .content {
+.portfolio .content {
     background: $senary-color;
     min-height: $min-height;
     width: $min-width;
+    padding: 5rem;
 }
 
-.aboutMe p {
-    font-family: $font-stack;
-    color: $quinary-color;
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 400;
+.portfolio .content .project {
+    min-height: $min-height;
+    padding: 5rem;
 }
+
+.description span {
+    padding: 5rem
+}
+
+.primary{
+    background: $primary-color;
+}
+
+.secondary{
+    background: $secondary-color;
+}
+
+.tertiary{
+    background: $tertiary-color;
+    color: white;
+}
+
+.quaternary{
+    background: $quaternary-color;
+}
+
+.quinary{
+    background: $quinary-color;
+    color: white;
+}
+
+.senary{
+    background: $senary-color;
+}
+

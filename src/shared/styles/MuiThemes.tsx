@@ -32,3 +32,33 @@ export const headerTheme = responsiveFontSizes(createTheme({
     }
   },
 }));
+
+export const portfolioTheme = responsiveFontSizes(createTheme({
+  typography: {
+    fontFamily: [
+      'Open Sans',
+    ].join(','),
+    h1: {
+      fontSize: '5rem',
+      fontWeight: 800,
+    },
+    h5: {
+      fontSize: '1.5rem',
+      fontWeight: 800,
+    },
+    h6: {
+      fontSize: '1.5rem',
+      fontWeight: 300,
+      margin: 0,
+    },
+    subtitle1: {
+      fontSize: '1.25rem',
+      fontWeight: 400,
+      margin: 0,
+    },
+    body1: {
+      fontSize: '1.25rem',
+      fontWeight: 300,
+    }
+  },
+}));
