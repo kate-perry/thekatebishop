@@ -24,7 +24,7 @@ function App() {
     <div className="app">
       <WindowSizeContext.Provider value={windowSize} >
         <Header />
-        {/* <AboutMe /> */}
+        <AboutMe />
       </WindowSizeContext.Provider>
     </div>
   );

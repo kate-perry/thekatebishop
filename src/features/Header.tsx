@@ -30,7 +30,7 @@ export default function Header() {
                 <div className="background" />
                 <div className="content">
                     <Grid container direction="row">
-                        <Grid item xs={windowSize >= WindowSize.MEDIUM ? 8 : 11}>
+                        <Grid item xs={windowSize >= WindowSize.MEDIUM ? 8 : 12}>
                             <CSSTransition
                                 in={showContent}
                                 timeout={transitionTimeout}
@@ -65,7 +65,7 @@ export default function Header() {
                             </CSSTransition>
                         </Grid>
                         {windowSize >= WindowSize.MEDIUM &&
-                            <Grid item xs={4} alignContent="flex-end">
+                            <Grid item xs={4}>
                                 <CSSTransition
                                     in={showContent}
                                     timeout={transitionTimeout}

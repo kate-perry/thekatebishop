@@ -27,7 +27,7 @@ export const headerTheme = responsiveFontSizes(createTheme({
     },
     body1: {
       color: palette.quinary,
-      fontSize: '1rem',
+      fontSize: '1.25rem',
       fontWeight: 400,
     }
   },

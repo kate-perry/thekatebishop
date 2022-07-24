@@ -27,11 +27,13 @@ html {
     min-height: $min-height;
     max-width: $min-width;
     padding-left: 5rem;
+    padding-right: 3rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .content {
         padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -67,7 +69,9 @@ html {
 }
 
 .header img {
-    width: 100%;
+    width: 90%;
+    margin-left: 2rem;
+    box-shadow: inset -.5rem -.5rem 0 .75rem white;
     -webkit-filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
