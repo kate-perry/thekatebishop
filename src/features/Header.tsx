@@ -29,7 +29,7 @@ export default function Header() {
                 <div className="background" />
                 <div className="content">
                     <Grid container direction='row' style={{ height: '100vh', alignItems: 'center' }}>
-                        <Grid item xs={8}>
+                        <Grid item xs={windowSize < WindowSize.MEDIUM ? 12 : 8}>
                             <CSSTransition
                                 in={showContent}
                                 timeout={transitionTimeout}

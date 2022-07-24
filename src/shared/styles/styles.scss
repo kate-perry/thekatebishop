@@ -10,6 +10,9 @@ $senary-color: #fdf9db; // light lemon
 $font-stack: 'Open Sans', sans-serif;
 $min-height: 100vh;
 $min-width: 100%;
+$small-breakpoint: 480px;
+$medium-breakpoint: 768px;
+$large-breakpoint: 1024px;
 
 html {
     background-color: $quinary-color;
@@ -48,10 +51,15 @@ body {
     padding-right: 3rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $medium-breakpoint) {
     .content {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+}
+@media only screen and (max-width: $small-breakpoint) {
+    .content {
+        overflow: scroll;
     }
 }
 
@@ -138,8 +146,11 @@ body {
                 position: relative;
                 overflow: scroll;
 
-                & .description span {
-                    padding: 2rem;
+                & .description {
+                    overflow: scroll
+                    span {
+                        padding: 2rem;
+                    }
                 }
 
                 & .artifact {

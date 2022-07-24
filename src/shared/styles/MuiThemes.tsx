@@ -10,25 +10,34 @@ export const headerTheme = responsiveFontSizes(createTheme({
       color: 'white',
       fontSize: '9rem',
       fontWeight: 800,
-      // '@media (max-width:480px)': {
-      //   fontSize: '4rem'
-      // },
+      '@media (max-width:480px)': {
+        fontSize: '3rem'
+      },
     },
     h5: {
       color: palette.quinary,
       fontSize: '1.25rem',
       fontWeight: 400,
+      '@media (max-width:480px)': {
+        fontSize: '1rem'
+      },
     },
     h6: {
       color: palette.quinary,
       fontSize: '1.5rem',
       fontWeight: 300,
       margin: 0,
+      '@media (max-width:480px)': {
+        fontSize: '1rem'
+      },
     },
     body1: {
       color: palette.quinary,
       fontSize: '1rem',
       fontWeight: 400,
+      '@media (max-width:480px)': {
+        fontSize: '.75rem'
+      },
     }
   },
 }));
