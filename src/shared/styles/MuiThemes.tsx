@@ -40,7 +40,7 @@ export const portfolioTheme = responsiveFontSizes(createTheme({
     ].join(','),
     h1: {
       fontSize: '5rem',
-      fontWeight: 800,
+      fontWeight: 300,
     },
     h5: {
       fontSize: '1.5rem',

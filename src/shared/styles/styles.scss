@@ -17,7 +17,6 @@ html {
 
 .app {
     text-align: start;
-    scroll-snap-type: y mandatory;
 }
 
 .content {
@@ -38,14 +37,12 @@ html {
 
 .header {
     min-height: $min-height;
-    scroll-snap-align: start;
-
     & .background {
         background: linear-gradient(-45deg, $primary-color, $tertiary-color, $primary-color, $tertiary-color);
         background-size: 400% 400%;
         animation: gradient 7s ease infinite;
         min-height: $min-height;
-        width: $min-width;
+        min-width: $min-width;
         position: fixed;
     }
 
@@ -94,8 +91,6 @@ html {
 
 .portfolio {
     min-height: $min-height;
-    scroll-snap-align: start;
-
     & .content {
         background: $senary-color;
         min-height: $min-height;
@@ -104,7 +99,6 @@ html {
 
         & .project {
             min-height: $min-height;
-            padding: 5rem;
 
             & .description span {
                 padding: 5rem;

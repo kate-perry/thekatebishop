@@ -1,5 +1,3 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import '../shared/styles/styles.scss';
@@ -16,9 +14,9 @@ export default function Portfolio() {
     return (
         <div className="portfolio">
             <ThemeProvider theme={portfolioTheme}>
-                <Typography variant="h1" textAlign="center">UX Portfolio</Typography>
                 <div className="content">
                     <Grid container direction="column">
+                        <Typography variant="h1">Portfolio</Typography>
                         {portfolio.map((project, i) =>
                             <Grid container direction="row" className='project'>
                                 <Grid item xs={8}>
@@ -38,7 +36,7 @@ export default function Portfolio() {
                                 <Grid item xs={4}>
                                     {project.artifacts ? [...project.artifacts].map((art, i) => {
                                         return (
-                                            <img />
+                                            <img alt={art.title} />
                                         )
                                     }) : null}
                                 </Grid>

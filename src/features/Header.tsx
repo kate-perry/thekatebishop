@@ -22,7 +22,7 @@ export default function Header() {
     useEffect(() => {
         setShowContent(true)
         console.log(windowSize)
-    }, [])
+    }, [windowSize])
 
     return (
         <div className="header">
@@ -66,14 +66,14 @@ export default function Header() {
                         </Grid>
                         {windowSize >= WindowSize.MEDIUM &&
                             <Grid item xs={4}>
-                                <CSSTransition
+                                {/* <CSSTransition
                                     in={showContent}
                                     timeout={transitionTimeout}
                                     classNames="content-grow"
                                     unmountOnExit
-                                    onEnter={() => setShowContent(true)}>
+                                    onEnter={() => setShowContent(true)}> */}
                                     <img src={katebishop} alt="Kate Bishop" />
-                                </CSSTransition>
+                                {/* </CSSTransition> */}
                             </Grid>
                         }
                     </Grid>
