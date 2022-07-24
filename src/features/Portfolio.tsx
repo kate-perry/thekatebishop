@@ -18,7 +18,7 @@ export default function Portfolio() {
                     <Grid container direction="column">
                         <div className="title">
                             <Typography variant="h1">
-                                <span>Portfolio</span>
+                                <span>PORTFOLIO</span>
                             </Typography>
                         </div>
                         <div className="projects">
@@ -26,14 +26,14 @@ export default function Portfolio() {
                                 <Grid container direction="row" className='project'>
                                     <Grid item xs={5}>
                                         <Grid container direction="column" className='description'>
-                                            <span className={usableColors[i + 1]}>
+                                            <span className={usableColors[i + 2]}>
                                                 <Typography variant="h5">{project.projectRole}</Typography>
                                                 <Typography variant="h6">{project.projectTitle}</Typography>
-                                                <Typography variant="subtitle1">Problem</Typography>
+                                                <Typography variant="subtitle1">PROBLEM</Typography>
                                                 <Typography variant="body1">{project.problem}</Typography>
-                                                <Typography variant="subtitle1">Approach</Typography>
+                                                <Typography variant="subtitle1">APPROACH</Typography>
                                                 <Typography variant="body1">{project.approach}</Typography>
-                                                <Typography variant="subtitle1">Result</Typography>
+                                                <Typography variant="subtitle1">RESULT</Typography>
                                                 <Typography variant="body1">{project.result}</Typography>
                                             </span>
                                         </Grid>

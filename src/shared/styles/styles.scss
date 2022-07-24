@@ -9,7 +9,7 @@ $quinary-color: #16123f; // navy
 $senary-color: #fdf9db; // light lemon
 $font-stack: 'Open Sans', sans-serif;
 $min-height: 100vh;
-$min-width: 100vw;
+$min-width: 100%;
 
 html {
     background-color: $quinary-color;
@@ -139,12 +139,12 @@ body {
                 overflow: scroll;
 
                 & .description span {
-                    padding: 5rem;
+                    padding: 2rem;
                 }
 
                 & .artifact {
                     & img {
-                        height: 5rem;
+                        width: $min-width;
                     }
                 }
             }

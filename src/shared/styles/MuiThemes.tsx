@@ -16,7 +16,7 @@ export const headerTheme = responsiveFontSizes(createTheme({
     },
     h5: {
       color: palette.quinary,
-      fontSize: '1.5rem',
+      fontSize: '1.25rem',
       fontWeight: 400,
     },
     h6: {
@@ -27,7 +27,7 @@ export const headerTheme = responsiveFontSizes(createTheme({
     },
     body1: {
       color: palette.quinary,
-      fontSize: '1.25rem',
+      fontSize: '1rem',
       fontWeight: 400,
     }
   },
@@ -52,12 +52,12 @@ export const portfolioTheme = responsiveFontSizes(createTheme({
       margin: 0,
     },
     subtitle1: {
-      fontSize: '1.25rem',
+      fontSize: '1.1rem',
       fontWeight: 600,
       margin: 0,
     },
     body1: {
-      fontSize: '1.25rem',
+      fontSize: '1rem',
       fontWeight: 300,
     }
   },
