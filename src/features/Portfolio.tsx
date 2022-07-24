@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import '../shared/styles/styles.scss';
@@ -10,6 +11,7 @@ import { paletteArray } from '../shared/utils/constants';
 
 export default function Portfolio() {
     const usableColors = paletteArray.filter(color => color !== 'senary');
+    const [colorPalette, setColorPalette] = useState({ background: paletteArray[0], content: paletteArray[1] })
 
     return (
         <div className="portfolio">
@@ -22,33 +24,35 @@ export default function Portfolio() {
                             </Typography>
                         </div>
                         <div className="projects">
-                            {portfolio.map((project, i) =>
-                                <Grid container direction="row" className='project'>
-                                    <Grid item xs={5}>
-                                        <Grid container direction="column" className='description'>
-                                            <span className={usableColors[i + 2]}>
-                                                <Typography variant="h5">{project.projectRole}</Typography>
-                                                <Typography variant="h6">{project.projectTitle}</Typography>
-                                                <Typography variant="subtitle1">PROBLEM</Typography>
-                                                <Typography variant="body1">{project.problem}</Typography>
-                                                <Typography variant="subtitle1">APPROACH</Typography>
-                                                <Typography variant="body1">{project.approach}</Typography>
-                                                <Typography variant="subtitle1">RESULT</Typography>
-                                                <Typography variant="body1">{project.result}</Typography>
-                                            </span>
+                            {portfolio.map((project, i) => {
+                                return (
+                                    <Grid container direction="row" className='project'>
+                                        <Grid item xs={5}>
+                                            <Grid container direction="column" className='description'>
+                                                <span className={usableColors[i + 2]}>
+                                                    <Typography variant="h5">{project.projectRole}</Typography>
+                                                    <Typography variant="h6">{project.projectTitle}</Typography>
+                                                    <Typography variant="subtitle1">PROBLEM</Typography>
+                                                    <Typography variant="body1">{project.problem}</Typography>
+                                                    <Typography variant="subtitle1">APPROACH</Typography>
+                                                    <Typography variant="body1">{project.approach}</Typography>
+                                                    <Typography variant="subtitle1">RESULT</Typography>
+                                                    <Typography variant="body1">{project.result}</Typography>
+                                                </span>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid item xs={7}>
+                                            {project.artifacts ? [...project.artifacts].map((art, i) => {
+                                                return (
+                                                    <div className="artifact">
+                                                        <img src={require('../shared/static/' + art.src)} alt={art.title} className="artifact" />
+                                                        <Typography variant="body1">{art.description}</Typography>
+                                                    </div>
+                                                )
+                                            }) : null}
                                         </Grid>
                                     </Grid>
-                                    <Grid item xs={7}>
-                                        {project.artifacts ? [...project.artifacts].map((art, i) => {
-                                            return (
-                                                <div className="artifact">
-                                                    <img src={require('../shared/static/' + art.src)} alt={art.title} className="artifact" />
-                                                    <Typography variant="body1">{art.description}</Typography>
-                                                </div>
-                                            )
-                                        }) : null}
-                                    </Grid>
-                                </Grid>
+                                )}
                             )}
                         </div>
                     </Grid>

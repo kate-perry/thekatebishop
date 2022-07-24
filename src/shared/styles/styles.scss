@@ -18,7 +18,9 @@ html {
 html,
 body {
     height: $min-height;
+    width: $min-width;
     overflow: hidden;
+    margin: 0;
 }
 
 .app {
@@ -123,13 +125,11 @@ body {
     & .content {
         background: $senary-color;
         min-height: $min-height;
-        width: $min-width;
         padding-top: 2.5rem;
 
         & .projects {
             overflow: scroll;
             height: $min-height;
-            scroll-snap-points-y: repeat($min-height);
             scroll-snap-type: y mandatory;
 
             & .project {
