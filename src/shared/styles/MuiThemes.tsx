@@ -39,8 +39,8 @@ export const portfolioTheme = responsiveFontSizes(createTheme({
       'Open Sans',
     ].join(','),
     h1: {
-      fontSize: '5rem',
-      fontWeight: 800,
+      fontSize: '3rem',
+      fontWeight: 300,
     },
     h5: {
       fontSize: '1.5rem',

@@ -130,7 +130,7 @@ body {
             overflow: scroll;
             height: $min-height;
             scroll-snap-points-y: repeat($min-height);
-            scroll-snap-type: y proximity;
+            scroll-snap-type: y mandatory;
 
             & .project {
                 height: $min-height;

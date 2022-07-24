@@ -18,7 +18,7 @@ export default function Portfolio() {
                     <Grid container direction="column">
                         <div className="title">
                             <Typography variant="h1">
-                                <span>PORTFOLIO</span>
+                                <span>Portfolio</span>
                             </Typography>
                         </div>
                         <div className="projects">
