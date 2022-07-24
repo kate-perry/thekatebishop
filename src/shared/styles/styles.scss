@@ -15,8 +15,24 @@ html {
     background-color: $quinary-color;
 }
 
+html,
+body {
+    height: $min-height;
+    overflow: hidden;
+}
+
 .app {
     text-align: start;
+    overflow: scroll;
+    height: $min-height;
+    width: $min-width;
+    scroll-snap-type: y mandatory;
+
+    section {
+        height: $min-height;
+        scroll-snap-align: start;
+        position: relative;
+    }
 }
 
 .content {
@@ -37,6 +53,7 @@ html {
 
 .header {
     min-height: $min-height;
+
     & .background {
         background: linear-gradient(-45deg, $primary-color, $tertiary-color, $primary-color, $tertiary-color);
         background-size: 400% 400%;
@@ -91,25 +108,44 @@ html {
 
 .portfolio {
     min-height: $min-height;
+
     & .title {
         margin-bottom: 2rem;
+        color: white;
+
+        span {
+            margin: 1rem;
+            background-color: $quinary-color;
+            box-shadow: 0rem 0rem 0rem 1rem $quinary-color;
+        }
     }
+
     & .content {
         background: $senary-color;
         min-height: $min-height;
         width: $min-width;
         padding: 5rem;
 
-        & .project {
-            min-height: $min-height;
+        & .projects {
+            overflow: scroll;
+            height: $min-height;
+            scroll-snap-points-y: repeat($min-height);
+            scroll-snap-type: y proximity;
 
-            & .description span {
-                padding: 5rem;
-            }
+            & .project {
+                height: $min-height;
+                scroll-snap-align: start;
+                position: relative;
+                overflow: scroll;
 
-            & .artifact {
-                & img {
-                    height: 5rem;
+                & .description span {
+                    padding: 5rem;
+                }
+
+                & .artifact {
+                    & img {
+                        height: 5rem;
+                    }
                 }
             }
         }

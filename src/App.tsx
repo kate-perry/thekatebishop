@@ -21,12 +21,12 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
-      <WindowSizeContext.Provider value={windowSize} >
-        <Header />
-        <Portfolio />
-      </WindowSizeContext.Provider>
-    </div>
+    <WindowSizeContext.Provider value={windowSize} >
+      <div className="app">
+        <section><Header /></section>
+        <section><Portfolio /></section>
+      </div>
+    </WindowSizeContext.Provider>
   );
 }
 
