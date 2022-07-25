@@ -136,24 +136,27 @@ body {
         min-height: $min-height;
 
         & .projects {
-            overflow: scroll;
             height: $min-height;
             scroll-snap-type: y mandatory;
 
             & .project {
                 scroll-snap-align: start;
-                position: relative;
+                margin: 2rem;
+                height: calc($min-height - 4rem);
 
                 & .description {
                     overflow: scroll;
+
                     span {
                         padding: 2rem;
                     }
                 }
 
-                & .artifact {
-                    & img {
-                        width: $min-width;
+                & .artifacts {
+                    & .artifact {
+                        & img {
+                            width: $min-width;
+                        }
                     }
                 }
             }

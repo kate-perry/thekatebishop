@@ -24,7 +24,7 @@ export default function Portfolio() {
                         <div className="projects">
                             {portfolio.map((project, i) => {
                                 return (
-                                    <Grid container direction="row" className="project">
+                                    <Grid container direction="row" className={"project " + usableColors[i + 2]}>
                                         <Grid item xs={5}>
                                             <Grid container direction="column" className='description'>
                                                 <Typography variant="h5">{project.projectRole}</Typography>
@@ -37,8 +37,8 @@ export default function Portfolio() {
                                                 <Typography variant="body1">{project.result}</Typography>
                                             </Grid>
                                         </Grid>
-                                        <Grid item xs={7}>
-                                            {project.artifacts ? [...project.artifacts].map((art, i) => {
+                                        <Grid item xs={7} className="artifacts">
+                                            {project.artifacts ? [...project.artifacts].map((art) => {
                                                 return (
                                                     <div className="artifact">
                                                         <img src={require('../shared/static/' + art.src)} alt={art.title} className="artifact" />
