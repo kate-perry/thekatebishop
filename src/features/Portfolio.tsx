@@ -10,35 +10,31 @@ import { portfolioTheme } from '../shared/styles/MuiThemes';
 import { paletteArray } from '../shared/utils/constants';
 
 export default function Portfolio() {
-    const usableColors = paletteArray.filter(color => color !== 'senary');
+    const usableColors = paletteArray.filter(color => color !== 'quaternary');
     const [colorPalette, setColorPalette] = useState({ background: paletteArray[0], content: paletteArray[1] })
 
     return (
         <div className="portfolio">
             <ThemeProvider theme={portfolioTheme}>
                 <div className="content">
-                    <Grid container direction="column">
-                        <div className="title">
-                            <Typography variant="h1">
-                                <span>Portfolio</span>
-                            </Typography>
-                        </div>
+                    <div id="stars" />
+                    <div id="stars2" />
+                    <div id="stars3" />
+                    <Grid container direction="row" style={{ height: '100vh', alignItems: 'center' }}>
                         <div className="projects">
                             {portfolio.map((project, i) => {
                                 return (
-                                    <Grid container direction="row" className='project'>
+                                    <Grid container direction="row" className="project">
                                         <Grid item xs={5}>
                                             <Grid container direction="column" className='description'>
-                                                <span className={usableColors[i + 2]}>
-                                                    <Typography variant="h5">{project.projectRole}</Typography>
-                                                    <Typography variant="h6">{project.projectTitle}</Typography>
-                                                    <Typography variant="subtitle1">PROBLEM</Typography>
-                                                    <Typography variant="body1">{project.problem}</Typography>
-                                                    <Typography variant="subtitle1">APPROACH</Typography>
-                                                    <Typography variant="body1">{project.approach}</Typography>
-                                                    <Typography variant="subtitle1">RESULT</Typography>
-                                                    <Typography variant="body1">{project.result}</Typography>
-                                                </span>
+                                                <Typography variant="h5">{project.projectRole}</Typography>
+                                                <Typography variant="h6">{project.projectTitle}</Typography>
+                                                <Typography variant="subtitle1">PROBLEM</Typography>
+                                                <Typography variant="body1">{project.problem}</Typography>
+                                                <Typography variant="subtitle1">APPROACH</Typography>
+                                                <Typography variant="body1">{project.approach}</Typography>
+                                                <Typography variant="subtitle1">RESULT</Typography>
+                                                <Typography variant="body1">{project.result}</Typography>
                                             </Grid>
                                         </Grid>
                                         <Grid item xs={7}>
@@ -52,8 +48,8 @@ export default function Portfolio() {
                                             }) : null}
                                         </Grid>
                                     </Grid>
-                                )}
-                            )}
+                                )
+                            })}
                         </div>
                     </Grid>
                 </div>

@@ -57,6 +57,7 @@ body {
         padding-right: 1rem;
     }
 }
+
 @media only screen and (max-width: $small-breakpoint) {
     .content {
         overflow: scroll;
@@ -131,9 +132,8 @@ body {
     }
 
     & .content {
-        background: $senary-color;
+        background: $quaternary-color;
         min-height: $min-height;
-        padding-top: 2.5rem;
 
         & .projects {
             overflow: scroll;
@@ -141,13 +141,11 @@ body {
             scroll-snap-type: y mandatory;
 
             & .project {
-                height: $min-height;
                 scroll-snap-align: start;
                 position: relative;
-                overflow: scroll;
 
                 & .description {
-                    overflow: scroll
+                    overflow: scroll;
                     span {
                         padding: 2rem;
                     }
