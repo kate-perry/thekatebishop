@@ -93,13 +93,20 @@ body {
         box-shadow: 0rem 0rem 0rem 1rem $secondary-color;
     }
 
-    & img {
+    & .photo {
         width: 90%;
         margin-left: 2rem;
         box-shadow: inset -.5rem -.5rem 0 .75rem white;
         -webkit-filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
         /* Safari 6.0 - 9.0 */
         filter: grayscale(90%) brightness(150%) drop-shadow(1rem 1rem 0 $secondary-color) drop-shadow(1rem 1rem 0 $quinary-color);
+    }
+
+    & .logo {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: 1rem;
+        filter: brightness(0) invert(1);
     }
 }
 

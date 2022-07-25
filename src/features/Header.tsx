@@ -8,9 +8,13 @@ import {
     title,
     tagline1,
     tagline2,
-    aboutMe
+    aboutMe,
+    github,
+    linkedin
 } from '../shared/utils/strings';
 import katebishop from '../shared/static/katebishop.png';
+import githubLogo from '../shared/static/githubLogo.svg';
+import linkedinLogo from '../shared/static/linkedinLogo.svg';
 import { ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { WindowSizeContext } from '../App';
@@ -59,6 +63,20 @@ export default function Header() {
                                     </Grid>
                                     <Grid item>
                                         <Typography variant="body1">{aboutMe}</Typography>
+                                    </Grid>
+                                    <Grid item>
+                                        <Grid container direction="row" spacing={1}>
+                                            <Grid item>
+                                                <a href={linkedin}>
+                                                    <img src={linkedinLogo} className="logo" />
+                                                </a>
+                                            </Grid>
+                                            <Grid item>
+                                                <a href={github}>
+                                                    <img src={githubLogo} className="logo" />
+                                                </a>
+                                            </Grid>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </CSSTransition>
