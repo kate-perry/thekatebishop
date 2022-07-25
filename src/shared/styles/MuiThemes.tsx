@@ -42,6 +42,14 @@ export const headerTheme = responsiveFontSizes(createTheme({
   },
 }));
 
+export const resumeTheme = responsiveFontSizes(createTheme({
+  typography: {
+    fontFamily: [
+      'Open Sans',
+    ].join(','),
+  },
+}))
+
 export const portfolioTheme = responsiveFontSizes(createTheme({
   typography: {
     fontFamily: [
