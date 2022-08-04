@@ -144,7 +144,7 @@ body {
 
         & .projects {
             height: $min-height;
-            scroll-snap-type: y mandatory;
+            scroll-snap-type: y proximity;
 
             & .project {
                 scroll-snap-align: start;
